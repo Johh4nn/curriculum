@@ -1,17 +1,167 @@
 <ion-header [translucent]="true">
+  <div class="header-bg">
+    <div class="header-overlay">
+      <ion-avatar>
+        <img src="assets/perfiljohan.jpg" alt="Foto Johan perfil" />
+      </ion-avatar>
+      <h2>Johan Vargas</h2>
+      <p>Técnico en Desarrollo de Software</p>
+    </div>
+  </div>
+
+  <!-- Segmento para navegación -->
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-segment value="perfil" (ionChange)="onSegmentChange($event)">
+      <ion-segment-button value="perfil">
+        <ion-label>Perfil</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="proyectos">
+        <ion-label>Proyectos</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="habilidades">
+        <ion-label>Habilidades</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="contacto">
+        <ion-label>Contacto</ion-label>
+      </ion-segment-button>
+    </ion-segment>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
 
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <!-- PERFIL -->
+  <section id="perfil">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Sobre mí</ion-card-title>
+        <ion-card-subtitle>Presentación</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Soy estudiante de Tecnología Superior en Desarrollo de Software en la Escuela Politécnica Nacional. 
+        Me destaco por mis habilidades en comunicación asertiva, gestión del tiempo y aprendizaje continuo. 
+        Me adapto fácilmente a nuevos entornos y disfruto aplicar mis conocimientos en proyectos prácticos.
+      </ion-card-content>
+    </ion-card>
+  </section>
+
+  <section id="proyectos">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Proyectos Académicos</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="proyectos-scroll">
+        <ion-card class="proyecto-item">
+          <ion-icon name="code-slash-outline" size="large"></ion-icon>
+          <h3>Aplicación Web para Venta de Maquetas</h3>
+          <p>Frontend con React y backend con Firebase.</p>
+          <ion-button fill="outline" href="https://marquetsmartdi-67e21.web.app/" target="_blank">
+            Ver Proyecto
+          </ion-button>
+        </ion-card>
+
+        <ion-card class="proyecto-item">
+          <ion-icon name="globe-outline" size="large"></ion-icon>
+          <h3>BoddyTravell - CRUD Turístico</h3>
+          <p>Java + Firebase</p>
+          <ion-button fill="outline" href="https://github.com/Johh4nn/BoddyTravell.git" target="_blank">
+            Código Fuente
+          </ion-button>
+        </ion-card>
+
+        <ion-card class="proyecto-item">
+          <ion-icon name="bar-chart-outline" size="large"></ion-icon>
+          <h3>DataInsights</h3>
+          <p>Dashboard en Power BI.</p>
+          <ion-button fill="outline" href="https://app.powerbi.com/view?r=eyJrIjoiNTdkMTdiN2UtMWI3ZC00ZTU5LWJkYzMtOTQ5ODZlZGU0NTQ1IiwidCI6IjY4MmE0ZTZhLWE3N2YtNDk1OC1hM2FjLTllMjY2ZDE4YWEzNyIsImMiOjR9" target="_blank">
+            Ver Dashboard
+          </ion-button>
+        </ion-card>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</section>
+
+
+  <!-- HABILIDADES + IDIOMAS -->
+  <section id="habilidades">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Habilidades Técnicas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6">
+              <p>Python</p>
+              <ion-progress-bar value="0.8" color="primary"></ion-progress-bar>
+            </ion-col>
+            <ion-col size="6">
+              <p>Java</p>
+              <ion-progress-bar value="0.75" color="tertiary"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <p>C++</p>
+              <ion-progress-bar value="0.7" color="medium"></ion-progress-bar>
+            </ion-col>
+            <ion-col size="6">
+              <p>React</p>
+              <ion-progress-bar value="0.8" color="success"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">
+              <p>MySQL</p>
+              <ion-progress-bar value="0.75" color="warning"></ion-progress-bar>
+            </ion-col>
+            <ion-col size="6">
+              <p>Power BI</p>
+              <ion-progress-bar value="0.85" color="secondary"></ion-progress-bar>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Idiomas</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-accordion-group>
+          <ion-accordion value="ingles">
+            <ion-item slot="header">
+              <ion-icon name="chatbubbles-outline" slot="start"></ion-icon>
+              <ion-label>Inglés</ion-label>
+            </ion-item>
+            <div class="ion-padding" slot="content">
+              <p>Nivel Intermedio</p>
+            </div>
+          </ion-accordion>
+        </ion-accordion-group>
+      </ion-card-content>
+    </ion-card>
+  </section>
+
 </ion-content>
+
+<!-- CONTACTO en Footer -->
+<ion-footer id="contacto">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button fill="clear" href="mailto:johaniza1212@gmail.com">
+        <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" href="https://github.com/Johh4nn" target="_blank">
+        <ion-icon slot="icon-only" name="logo-github"></ion-icon>
+      </ion-button>
+      <ion-button fill="clear" href="https://marquetsmartdi-67e21.web.app/" target="_blank">
+        <ion-icon slot="icon-only" name="globe-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Contacto</ion-title>
+  </ion-toolbar>
+</ion-footer>
