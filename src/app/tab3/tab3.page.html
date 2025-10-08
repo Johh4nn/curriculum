@@ -1,19 +1,191 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Esta pagina se esta construyendo
+      <ion-icon name="person-circle-outline"></ion-icon>
+      Hoja de vida - Patricio Ponce 
     </ion-title>
   </ion-toolbar>
+
+    <ion-toolbar>
+      <ion-segment value="perfil" (ionChange)="onSegmentChange($event)">
+        <ion-segment-button value="perfil">
+          <ion-label>Perfil</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="experiencia">
+          <ion-label>Experiencia</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="habilidades">
+          <ion-label>Habilidades</ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="contacto">
+          <ion-label>Contacto</ion-label>
+        </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-    </ion-toolbar>
-  </ion-header>
-  
-  <div class="ion-text-center ion-margin-top" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 70vh;">
-    <h2>¡Próximamente!</h2>
-    <p>Estamos trabajando para que esta sección esté disponible pronto. ¡Gracias por tu paciencia!</p>
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <!-- Sección de perfil -->
+  <div class="ion-text-center ion-margin-top" id="perfil">
+    <ion-avatar style="width: 130px; height: 130px; margin: auto; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+      <img src="assets/perfilpato.jfif" alt="Foto de perfil" />
+    </ion-avatar>
+    <h2 class="ion-margin-top">Patricio Ponce</h2>
+    <p style="font-size: 14px; color: var(--ion-color-medium);">
+      Tecnólogo en Desarrollo de Software | EPN
+    </p>
+
+    <!-- Botones de redes -->
+    <ion-buttons class="ion-justify-content-center">
+          <!-- CompuTrabajo -->
+      <ion-button fill="clear" href="https://candidato.ec.computrabajo.com/candidate/cv/edit/" target="_blank" color="primary">
+        <ion-icon slot="icon-only" name="people-circle-outline"></ion-icon>
+      </ion-button>
+
+      <!-- GitHub -->
+      <ion-button fill="clear" href="https://github.com/PatricioPonce28" target="_blank" color="dark">
+        <ion-icon slot="icon-only" name="code-slash-outline"></ion-icon>
+      </ion-button>
+
+      <!-- Instagram -->
+      <ion-button fill="clear" href="https://www.instagram.com/duck_mc666?igsh=MjF6MGE3ZzAyaTd3" target="_blank" color="tertiary">
+        <ion-icon slot="icon-only" name="globe-outline"></ion-icon>
+      </ion-button>
+
+      <!-- Email -->
+      <ion-button fill="clear" href="geanotoponce95@gmail.com" color="success">
+        <ion-icon slot="icon-only" name="send-outline"></ion-icon>
+      </ion-button>
+
+      <!-- Descargar CV -->
+      <ion-button fill="clear" download href="assets/Hoja de vida pato.pdf" color="medium">
+        <ion-icon slot="icon-only" name="document-text-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </div>
+
+  <!-- Tarjeta de perfil -->
+  <ion-card >
+    <ion-card-header>
+      <ion-card-title>Perfil Profesional</ion-card-title>
+      <ion-card-subtitle>Sobre mí</ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+Como Tecnólogo en Desarrollo de Software, combino mi pasión por la tecnología, el desarrollo de software 
+y el constante aprendizaje para diseñar soluciones eficientes, accesibles y que marcan la diferencia.
+ Busco activamente proyectos con un fuerte impacto social.
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Experiencia con acordeones -->
+  <ion-card id="experiencia">
+    <ion-card-header>
+      <ion-card-title>Experiencia Laboral</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-accordion-group>
+        <ion-accordion value="exp1">
+          <ion-item slot="header">
+            <ion-icon name="briefcase-outline" slot="start"></ion-icon>
+            <ion-label>Desarrollado FrontEnd - Tracking Web en React</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p><strong>2024 - 2025</strong> | LAARCOURIER EXPRESS S.A</p>
+            <p>Diseño de un Tracking de paquetería en React + Vite para los clientes.</p>
+          </div>
+        </ion-accordion>
+
+        <ion-accordion value="exp2">
+          <ion-item slot="header">
+            <ion-icon name="analytics-outline" slot="start"></ion-icon>
+            <ion-label>Python Developer</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">
+            <p><strong>2025</strong> | Curso de Python de SoloLearn.</p>
+          </div>
+        </ion-accordion>
+      </ion-accordion-group>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Educación -->
+  <ion-card id="educacion">
+    <ion-card-header>
+      <ion-card-title>Educación</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-icon name="school-outline" slot="start"></ion-icon>
+        <ion-label>
+          <h2>Tecnología Superior en Desarrollo de Software</h2>
+          <p>ESCUELA POLITÉCNICA NACIONAL (2023 - 2026)</p>
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Habilidades con barras de progreso -->
+  <ion-card id="habilidades">
+    <ion-card-header>
+      <ion-card-title>Habilidades Técnicas</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label>React</ion-label>
+        <ion-progress-bar value="0.7" color="success"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-label>C#</ion-label>
+        <ion-progress-bar value="0.7" color="primary"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-label>Node.js</ion-label>
+        <ion-progress-bar value="0.8" color="tertiary"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-label>Python</ion-label>
+        <ion-progress-bar value="0.8" color="warning"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-label>ASP.net</ion-label>
+        <ion-progress-bar value="0.7" color="medium"></ion-progress-bar>
+      </ion-item>
+      <ion-item>
+        <ion-label>GitHub</ion-label>
+        <ion-progress-bar value="0.9" color="dark"></ion-progress-bar>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Contacto -->
+  <ion-card id="contacto">
+    <ion-card-header>
+      <ion-card-title>Contacto</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-label>Correo: geanotoponce95@gamil.com</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon name="logo-linkedin" slot="start"></ion-icon>
+          <ion-label>Teléfono: +593 98 465 5005</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-icon slot="start"></ion-icon>
+          <ion-label>Facebook: Patricio Ponce</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Botón flotante para descarga de CV -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="secondary">
+      <ion-icon name="download-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
 </ion-content>

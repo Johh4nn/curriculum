@@ -1,0 +1,137 @@
+/* ====== ESTILO GENERAL ====== */
+ion-content {
+  --background: #f8f9fa; /* fondo suave */
+  color: #1a1a1a;
+}
+
+/* ====== HEADER Y TOOLBAR ====== */
+ion-toolbar[color="primary"] {
+  --background: linear-gradient(135deg, #3a0ca3, #7209b7); /* degradado violeta */
+  --color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Toolbar inferior (segmentos) */
+ion-toolbar:not([color]) {
+  --background: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+/* Segmentos */
+ion-segment-button {
+  --color: #6c757d;
+  --color-checked: #3a0ca3;
+  --indicator-color: #7209b7;
+  font-weight: 500;
+}
+
+/* ====== TARJETAS ====== */
+ion-card {
+  --background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 16px;
+}
+
+ion-card-header {
+  background: linear-gradient(90deg, #3a0ca3, #7209b7);
+  color: white;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+ion-card-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+ion-card-subtitle {
+  color: #dcdcdc;
+}
+
+/* ====== AVATAR ====== */
+ion-avatar img {
+  border: 3px solid #7209b7;
+  border-radius: 50%;
+}
+
+/* ====== BOTONES DE REDES ====== */
+ion-button[color="primary"] {
+  --color: #3a0ca3;
+}
+
+ion-button[color="dark"] {
+  --color: #212529;
+}
+
+ion-button[color="tertiary"] {
+  --color: #f72585;
+}
+
+ion-button[color="success"] {
+  --color: #4cc9f0;
+}
+
+ion-button[color="medium"] {
+  --color: #6c757d;
+}
+
+/* Efecto hover suave */
+ion-button:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+
+/* ====== BARRAS DE PROGRESO ====== */
+ion-progress-bar[color="success"] {
+  --progress-background: #4cc9f0;
+}
+
+ion-progress-bar[color="primary"] {
+  --progress-background: #3a0ca3;
+}
+
+ion-progress-bar[color="tertiary"] {
+  --progress-background: #f72585;
+}
+
+ion-progress-bar[color="warning"] {
+  --progress-background: #ffb703;
+}
+
+ion-progress-bar[color="medium"] {
+  --progress-background: #adb5bd;
+}
+
+ion-progress-bar[color="dark"] {
+  --progress-background: #1a1a1a;
+}
+
+/* ====== ICONOS DE CONTACTO ====== */
+ion-item ion-icon {
+  color: #3a0ca3;
+}
+
+/* ====== TEXTO ====== */
+h2 {
+  color: #3a0ca3;
+  font-weight: bold;
+}
+
+p {
+  font-size: 14px;
+  color: #495057;
+}
+
+/* ====== EFECTOS SUAVES ====== */
+ion-card,
+ion-avatar,
+ion-button {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+ion-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
